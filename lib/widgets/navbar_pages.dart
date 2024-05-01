@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sangrakshan/views/categories.dart';
 import 'package:sangrakshan/views/quiz.dart';
-import 'package:sangrakshan/views/userprofile.dart';
 import 'package:sangrakshan/widgets/navbar.dart';
 
 
@@ -16,9 +15,8 @@ class NavScreen extends StatefulWidget {
 
 class _NavScreenState extends State<NavScreen> {
   final _pages = [
-    CategoriesScreen(),
-    QuizScreen(),
-    UserProfile(),
+    const CategoriesScreen(),
+    const QuizScreen(),
   ];
 
   var _selected = 0;

@@ -43,7 +43,7 @@ class _NavBarState extends State<NavBar> {
                   Icons.home_rounded,
                   size: 30,
                   color: widget.idx == 0
-                      ? kdarkBlue
+                      ? kdarkBlueMuted
                       : kblackSubHeading.withOpacity(0.3),
                 ),
               ),
@@ -53,18 +53,7 @@ class _NavBarState extends State<NavBar> {
                   Icons.quiz_rounded,
                   size: 30,
                   color: widget.idx == 1
-                      ? kdarkBlue
-                      : kblackSubHeading.withOpacity(0.3),
-                ),
-              ),
-              
-              IconButton(
-                onPressed: () => widget.change(2),
-                icon: Icon(
-                  Icons.person,
-                  size: 30,
-                  color: widget.idx == 3
-                      ? kdarkBlue
+                      ? kdarkBlueMuted
                       : kblackSubHeading.withOpacity(0.3),
                 ),
               ),
