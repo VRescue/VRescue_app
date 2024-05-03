@@ -1,49 +1,57 @@
 import 'package:flutter/material.dart';
+import 'package:sangrakshan/global/color.dart';
 
 class CategoryGridItem extends StatelessWidget {
   final String title;
-  final IconData icon;
-  final Color color;
+  final String image;
+  final void Function() onSelectCategory;
 
   const CategoryGridItem({
     required this.title,
-    required this.icon,
-    required this.color,
+    required this.image,
+    required this.onSelectCategory,
   });
 
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 4,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: InkWell(
-        onTap: () {
-          // Add your onTap logic here
-        },
-        child: Container(
+  elevation: 4,
+  child: InkWell(
+    onTap: onSelectCategory,
+    child: Stack(
+      children: [
+        ClipRRect(
+          borderRadius: BorderRadius.circular(10),
+          child: Image.asset(
+            image,
+            fit: BoxFit.cover,
+            width: double.infinity,
+            height: double.infinity,
+            color: Colors.black.withOpacity(0.5),
+            colorBlendMode: BlendMode.darken,
+          ),
+        ),
+        Container(
           padding: const EdgeInsets.all(16),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(
-                icon,
-                size: 48,
-                color: color,
-              ),
-              const SizedBox(height: 8),
-              Text(
-                title,
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
+              Center(
+                child: Text(
+                  title,
+                  style: const TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: kwhite,
+                  ),
                 ),
               ),
             ],
           ),
         ),
-      ),
-    );
+      ],
+    ),
+  ),
+);
   }
 }

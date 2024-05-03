@@ -14,14 +14,14 @@ class StartScreen extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Image.asset(
-            'assets/user/disaster.png',
+            'assets/quiz/disaster.png',
             width: 400,
           ),
           const SizedBox(height: 60,),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(
-              'Learn about CBRNE (Chemical, Biological, Radiological, Nuclear, and Explosive) disasters with this quiz!',
+              'Learn about CBRNE (Chemical, Biological, Radiological, Nuclear and Explosive) disasters with this quiz!',
               style: GoogleFonts.lato(
                 color: kblackHeading,
                 fontSize: 24,

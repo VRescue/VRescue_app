@@ -56,8 +56,8 @@ class _CategoriesScreenState extends State<CategoriesScreen> with SingleTickerPr
             for(final Category in availableCategories)
             CategoryGridItem(
               title: Category.title,
-              icon: Icons.category,
-              color: Colors.blue,
+              image: Category.image,
+              onSelectCategory: (){},
             ),
           ],
         ),
