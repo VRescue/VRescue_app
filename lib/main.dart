@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: kdarkBlue),
           fontFamily: GoogleFonts.outfit().fontFamily,
           useMaterial3: true,
-          textTheme: TextTheme(
+          textTheme: const TextTheme(
             displayLarge: TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.w600,

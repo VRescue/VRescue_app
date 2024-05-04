@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:sangrakshan/data/category_data.dart';
 import 'package:sangrakshan/global/color.dart';
+import 'package:sangrakshan/models/category.dart';
+import 'package:sangrakshan/models/disasters.dart';
+import 'package:sangrakshan/views/disaster_screen.dart';
 import 'package:sangrakshan/widgets/category_grid_item.dart';
 
 class CategoriesScreen extends StatefulWidget {
-  const CategoriesScreen({super.key,});
+  const CategoriesScreen({super.key, required this.availableDisasters});
+
+  final List<Disasters>  availableDisasters;
 
   @override
   State<CategoriesScreen> createState() => _CategoriesScreenState();
@@ -33,6 +38,17 @@ class _CategoriesScreenState extends State<CategoriesScreen> with SingleTickerPr
     super.dispose();
   }
 
+  void _selectCategory(BuildContext context, Category category) {
+    final filteredDisasters = widget.availableDisasters.where((disaster) => disaster.category.contains(category.id)).toList();
+
+    Navigator.push(context, MaterialPageRoute(builder: (ctx) => DisasterScreen(
+      title: category.title,
+      disasters: filteredDisasters,
+    ),
+    ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,7 +73,9 @@ class _CategoriesScreenState extends State<CategoriesScreen> with SingleTickerPr
             CategoryGridItem(
               title: Category.title,
               image: Category.image,
-              onSelectCategory: (){},
+              onSelectCategory: (){
+                _selectCategory(context, Category);
+              },
             ),
           ],
         ),

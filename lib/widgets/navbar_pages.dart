@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:sangrakshan/data/disasters_data.dart';
 import 'package:sangrakshan/views/categories.dart';
 import 'package:sangrakshan/views/quiz.dart';
 import 'package:sangrakshan/widgets/navbar.dart';
-
-
 
 class NavScreen extends StatefulWidget {
   static const routeName = "/tabScreen";
@@ -15,7 +14,9 @@ class NavScreen extends StatefulWidget {
 
 class _NavScreenState extends State<NavScreen> {
   final _pages = [
-    const CategoriesScreen(),
+    const CategoriesScreen(
+      availableDisasters: disasters,
+    ),
     const QuizScreen(),
   ];
 
