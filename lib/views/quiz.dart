@@ -61,7 +61,7 @@ class _QuizScreenState extends State<QuizScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("SANGRAKSHAN"),
+        title: Text("VRescue"),
         centerTitle: true,
       ),
       backgroundColor: klightPurple,

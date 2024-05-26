@@ -53,7 +53,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> with SingleTickerPr
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('SANGRAKSHAN'),
+        title: const Text('VRescue'),
         centerTitle: true,
       ),
       backgroundColor: klightPurple,
