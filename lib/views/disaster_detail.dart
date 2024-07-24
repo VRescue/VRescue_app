@@ -16,6 +16,8 @@ class DisasterDetailScreen extends StatelessWidget {
       ),
       backgroundColor: klightPurple,
       body: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
+        primary: true,
         child: Column(
           children: [
             Hero(

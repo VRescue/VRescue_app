@@ -28,6 +28,7 @@ class DisasterScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Widget Content = ListView.builder(
+      physics: const BouncingScrollPhysics(),
       itemCount: disasters.length,
       itemBuilder: (ctx, index) {
         return DisasterItem(

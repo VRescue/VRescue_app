@@ -61,6 +61,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> with SingleTickerPr
       child: AnimatedBuilder(
         animation: _animationController,
         child: GridView(
+          physics: const BouncingScrollPhysics(),
           padding: EdgeInsets.all(10),
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 1,
